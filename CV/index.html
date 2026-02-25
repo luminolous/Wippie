@@ -15,6 +15,21 @@
 <body>
   <div class="bg-tiles" aria-hidden="true" id="bgTiles"></div>
 
+  <nav class="topnav" aria-label="Section navigation">
+    <div class="topnav__wrap">
+      <span class="topnav__btn" tabindex="0">Navigation ▾</span>
+
+      <div class="topnav__menu">
+        <a href="#intro">Introduction</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievement">Achievement</a>
+        <a href="#project">Top Projects</a>
+        <a href="#fp">Final Project Idea</a>
+        <a href="#dream">Dream Job</a>
+      </div>
+    </div>
+  </nav>
+
   <button class="music-btn" id="musicBtn" type="button" aria-label="Putar musik" aria-pressed="false" title="Play/Pause music">
     <svg class="music-btn__icon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M10 19a3 3 0 1 1-1.5-2.6V5a1 1 0 0 1 .78-.98l9-2A1 1 0 0 1 19.5 3v11.5a3 3 0 1 1-1.5-2.6V4.24L10 6.02V19z"></path>
@@ -58,21 +73,26 @@
     </header>
 
     <main class="grid">
-      <section class="card section">
+      <section class="card section" id="intro">
         <h2 class="section__title">👻Introduction</h2>
-        <p class="lead">
-          AI Engineering student with a strong interest in research and development in Generative AI, 
-          particularly Diffusion-based image generation and Large Language Models. 
-          I’m building a solid foundation in Transformer architectures and optimization, 
-          supported by disciplined experimentation practices (clean experiment design, documentation, and reproducibility). 
-          I’m also hands-on with Python and deep learning ecosystems such as PyTorch / TensorFlow and Hugging Face.
-          
-          My current focus includes efficient fine-tuning and PEFT (LoRA / LoRA+ / other variants) for AI engineering 
-          under tight compute / VRAM constraints, as well as instruction tuning, Model evaluation and alignment. 
-          I also explore retrieval-based voice conversion (RVC) and multimodal pipelines. 
-          I am looking for a research environment with guidance and opportunities to turn ideas into testable, 
-          scalable real-world prototypes.
-        </p>
+        <div class="intro__lead">
+          <figure class="intro__photo">
+            <img src="assets/self_photo.jpg" alt="Self Photo" />
+          </figure>
+          <p>
+            AI Engineering student with a strong interest in research and development in Generative AI, 
+            particularly Diffusion-based image generation and Large Language Models. 
+            I’m building a solid foundation in Transformer architectures and optimization, 
+            supported by disciplined experimentation practices (clean experiment design, documentation, and reproducibility). 
+            I’m also hands-on with Python and deep learning ecosystems such as PyTorch / TensorFlow and Hugging Face.
+            
+            My current focus includes efficient fine-tuning and PEFT (LoRA / LoRA+ / other variants) for AI engineering 
+            under tight compute / VRAM constraints, as well as instruction tuning, Model evaluation and alignment. 
+            I also explore retrieval-based voice conversion (RVC) and multimodal pipelines. 
+            I am looking for a research environment with guidance and opportunities to turn ideas into testable, 
+            scalable real-world prototypes.
+          </p>
+        </div>
 
         <div class="two-col">
           <div>
@@ -101,7 +121,7 @@
         </div>
       </section>
 
-      <section class="card section">
+      <section class="card section" id="experience">
         <h2 class="section__title">🧊Experience</h2>
 
         <div class="timeline">
@@ -130,7 +150,7 @@
         </div>
       </section>
 
-      <section class="card section">
+      <section class="card section" id="achievement">
         <h2 class="section__title">🫧Achievement</h2>
         <div class="badges">
           <div class="badge">
@@ -149,7 +169,7 @@
         </div>
       </section>
 
-      <section class="card section">
+      <section class="card section" id="project">
         <h2 class="section__title">🐋Top 5 Project</h2>
         <div class="cards two">
           <article class="mini-card">
@@ -276,7 +296,7 @@
         </div>
       </section>
 
-      <section class="card section">
+      <section class="card section" id="fp">
         <h2 class="section__title">🤔Web App Idea for Final Project</h2>
         <div class="highlight">
           <h3 class="highlight__title">Maybe... I want to build animanga LoRA library for Diffusion Model •⩊•</h3>
@@ -312,7 +332,7 @@
         </div>
       </section>
 
-      <section class="card section">
+      <section class="card section" id="dream">
         <h2 class="section__title">🌬️Dream Job</h2>
         <div class="dream">
           <div>
