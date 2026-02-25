@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Wippie — Homepage</title>
+  <meta name="description" content="Homepage yang berisi link ke folder/project di dalam repo." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="top">
+    <div class="container top__inner">
+      <a class="brand" href="./" aria-label="Wippie home">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__name">Wippie</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav__link" href="https://github.com/luminolous/wippie" target="_blank" rel="noreferrer">
+          Repo
+        </a>
+        <a class="nav__link" href="https://luminolous.github.io/wippie/" aria-current="page">
+          Home
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="hero__kicker">Directory</p>
+      <h1 class="hero__title">Hello ♡ こんにちは (๑'ᵕ'๑)⸝*</h1>
+      <p class="hero__subtitle">
+        Pilih folder/project di bawah. Pastikan tiap folder punya <code>index.html</code>
+        supaya link seperti <code>/CV/</code> bisa kebuka.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="Daftar folder/project">
+      <a class="card" href="./CV/">
+        <div class="card__top">
+          <h2 class="card__title">CV</h2>
+          <span class="pill pill--blue">HTML • CSS</span>
+        </div>
+        <p class="card__desc">
+          Curriculum Vitae using HTML + CSS.
+        </p>
+        <div class="card__meta">
+          <span class="meta">./CV</span>
+          <span class="meta meta--arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- <a class="card" href="./project-1/">
+        <div class="card__top">
+          <h2 class="card__title">Project 1</h2>
+          <span class="pill">Demo</span>
+        </div>
+        <p class="card__desc">
+          Deskripsi singkat project kamu di sini.
+        </p>
+        <div class="card__meta">
+          <span class="meta">/project-1/</span>
+          <span class="meta meta--arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <a class="card" href="./notes/">
+        <div class="card__top">
+          <h2 class="card__title">Notes</h2>
+          <span class="pill pill--mint">Docs</span>
+        </div>
+        <p class="card__desc">
+          Catatan, dokumentasi, atau write-up singkat.
+        </p>
+        <div class="card__meta">
+          <span class="meta">/notes/</span>
+          <span class="meta meta--arrow" aria-hidden="true">→</span>
+        </div>
+      </a> -->
+    </section>
+
+    <footer class="footer">
+      <p class="footer__text footer__muted">
+        © <span id="year"></span> luminolous
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
