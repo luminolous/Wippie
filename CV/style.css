@@ -407,3 +407,53 @@ a:hover{ text-decoration: underline; }
     margin: 0 auto 12px;
   }
 }
+
+.chip--icon{
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+}
+
+.chip--icon img{
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.home-btn{
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(98,200,255,0.28);
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 28px rgba(18, 52, 75, 0.14);
+
+  color: var(--text);
+  font-weight: 800;
+  text-decoration: none;
+
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.home-btn:hover{
+  transform: translateY(-2px);
+  border-color: rgba(42,152,255,0.35);
+  box-shadow: 0 16px 34px rgba(18, 52, 75, 0.18);
+}
+
+.home-btn:focus-visible{
+  outline: none;
+  box-shadow: 0 12px 28px rgba(18, 52, 75, 0.14), var(--focus);
+}
