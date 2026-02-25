@@ -112,14 +112,14 @@ body{
 
 .hero__title{
   margin: 0;
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(28px, 4vw, 38px);
   line-height: 1.15;
 }
 
 .hero__subtitle{
   margin: 10px 0 0;
   color: var(--muted);
-  max-width: 62ch;
+  max-width: 80ch;
 }
 
 .hero code{
