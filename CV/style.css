@@ -23,7 +23,7 @@ html, body{
   cursor: url("assets/pawprint16.png") 8 8, auto;
 }
 
-a, a *, button, .chip, .contact__value, [role="button"]{
+a, a *, button, .chip, .contact__value, .music-btn, [role="button"]{
   cursor: url("assets/paws1.png") 8 8, pointer;
 }
 
@@ -265,9 +265,12 @@ a:hover{ text-decoration: underline; }
   box-shadow: 0 12px 28px rgba(18, 52, 75, 0.14);
   display: grid;
   place-items: center;
-  cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
   backdrop-filter: blur(10px);
+}
+
+.music-btn *{
+  cursor: inherit;
 }
 
 .music-btn:hover{
@@ -328,7 +331,7 @@ a:hover{ text-decoration: underline; }
   background: rgba(255,255,255,0.78);
   backdrop-filter: blur(10px);
   box-shadow: 0 12px 28px rgba(18, 52, 75, 0.14);
-  cursor: pointer;
+  cursor: inherit;
   user-select: none;
   font-weight: 700;
 }

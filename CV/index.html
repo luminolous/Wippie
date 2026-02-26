@@ -36,7 +36,7 @@
       <path d="M10 19a3 3 0 1 1-1.5-2.6V5a1 1 0 0 1 .78-.98l9-2A1 1 0 0 1 19.5 3v11.5a3 3 0 1 1-1.5-2.6V4.24L10 6.02V19z"></path>
     </svg>
   </button>
-  <audio id="bgm" src="assets/bgm.mp3" preload="auto" loop></audio>
+  <audio id="bgm" src="assets/backsound-1.mp3" preload="auto" loop></audio>
 
   <div class="page">
     <header class="hero card">
@@ -409,14 +409,17 @@
     const btn = document.getElementById("musicBtn");
     const audio = document.getElementById("bgm");
 
+    // audio.volume = 0.7;
+
     function setPlaying(isPlaying){
       btn.classList.toggle("is-playing", isPlaying);
       btn.setAttribute("aria-pressed", String(isPlaying));
-      btn.setAttribute("aria-label", isPlaying ? "Pause musik" : "Putar musik");
+      btn.setAttribute("aria-label", isPlaying ? "Music pause" : "Music play");
     }
 
     btn.addEventListener("click", async () => {
       try{
+        audio.volume = 0.7;
         if(audio.paused){
           await audio.play();
           setPlaying(true);
