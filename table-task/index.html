@@ -1,43 +1,83 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="id">
 <head>
-<style>
-table, th, td {
-  border: 1px solid rgb(33, 225, 255);
-  border-collapse: collapse;
-}
-</style>
-</head>
-<body>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task 2 — Documentation</title>
 
-<table style="width:25%">
-  <tr>
-    <th rowspan="2">Name</th>
-    <th colspan="3">Mark</th>
-  </tr>
-  <tr>
-    <td>Chemistry</td>
-    <td>Physics</td>
-    <td>Biology</td>
-  </tr>
-  <tr>
-    <td>Robby</td>
-    <td>76</td>
-    <td>80</td>
-    <td>81</td>
-  </tr>
-  <tr>
-    <td>Rendi</td>
-    <td>84</td>
-    <td>70</td>
-    <td>75</td>
-  </tr>
-  <tr>
-    <td>Alfian</td>
-    <td>96</td>
-    <td>70</td>
-    <td>71</td>
-  </tr>
-</table>
+  <link rel="stylesheet" href="../style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <header class="top">
+    <div class="container top__inner">
+      <a class="brand" href="../" aria-label="Back to home">
+        <span class="brand__name">Wippie</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav__link" href="../">Home</a>
+        <a class="nav__link" href="https://github.com/luminolous/wippie/tree/main/table-task" target="_blank" rel="noreferrer">
+            Source Code
+        </a>
+        <a class="nav__link" href="./project/">View Project →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="hero__kicker">Documentation</p>
+      <h1 class="hero__title">Task 2: Table</h1>
+      <p class="hero__subtitle">Documentation for the project.</p>
+    </section>
+
+    <section class="card" style="padding:16px;">
+      <div id="doc" class="md">Loading…</div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__text footer__muted">© <span id="year"></span> luminolous.</p>
+    </footer>
+  </main>
+
+  <script>
+    (async () => {
+        const el = document.getElementById("doc");
+
+        const mdUrl   = new URL("./docs/README.md", location.href);
+        const baseUrl = new URL("./docs/", location.href);
+
+        try {
+        const res = await fetch(mdUrl, { cache: "no-store" });
+        if (!res.ok) throw new Error("README.md tidak ditemukan");
+        const md = await res.text();
+
+        el.innerHTML = marked.parse(md);
+
+        el.querySelectorAll("img").forEach(img => {
+            const src = img.getAttribute("src");
+            if (!src) return;
+
+            if (/^(https?:)?\/\//i.test(src) || src.startsWith("data:")) return;
+
+            img.src = new URL(src, baseUrl).href;
+        });
+
+        el.querySelectorAll("a").forEach(a => {
+            const href = a.getAttribute("href");
+            if (!href) return;
+            if (/^(https?:)?\/\//i.test(href) || href.startsWith("#") || href.startsWith("mailto:")) return;
+
+            a.href = new URL(href, baseUrl).href;
+        });
+
+        } catch (e) {
+        el.innerHTML = `<h2>Documentation doesn't exist.</h2></p>`;
+        }
+    })();
+  </script>
 </body>
 </html>

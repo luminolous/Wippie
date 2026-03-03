@@ -36,6 +36,7 @@ body{
     radial-gradient(900px 500px at 60% 95%, rgba(61,90,254,.10), transparent 65%),
     linear-gradient(180deg, var(--bg0), var(--bg1));
   line-height: 1.5;
+  background-attachment: fixed;
 }
 
 .container{
@@ -253,4 +254,14 @@ body{
 
 @media (prefers-reduced-motion: reduce){
   .card{ transition: none; }
+}
+
+/* styling khusus hasil render Markdown */
+.md img{
+  display: block;
+  max-width: 100%;
+  height: auto;          /* menjaga rasio gambar */
+  margin: 14px auto;     /* center */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(2,6,23,.10);
 }
